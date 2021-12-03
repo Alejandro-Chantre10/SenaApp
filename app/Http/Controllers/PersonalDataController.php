@@ -7,79 +7,68 @@ use Illuminate\Http\Request;
 
 class PersonalDataController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $personals = PersonalData::simplePaginate(2);
+        return view('personal_data.index',compact('personals'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('personal_data.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $personal = new PersonalData;
+        $personal->nombres = $request->nombres;
+        $personal->apellidos =  $request->apellidos;
+        $personal->tipo_documento = $request->tipo_documento;
+        $personal->num_documento =  $request->num_documneto;
+        $personal->edad = $request->edad;
+        $personal->fecha_nacimiento = $request->fecha_nacimiento;
+        $personal->genero = $request->genero;
+        $personal->celular = $request->celular;
+        $personal->foto = $request->foto;
+        session()->flash('message', 'Datos Personales creados satisfactoriamente!');
+        return redirect()->route('personal_data.create');
+
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PersonalData  $personalData
-     * @return \Illuminate\Http\Response
-     */
-    public function show(PersonalData $personalData)
+
+    public function show($id)
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PersonalData  $personalData
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PersonalData $personalData)
+
+    public function edit(PersonalData $personal)
     {
-        //
+        return view('personal_data.edit',compact('personal'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PersonalData  $personalData
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PersonalData $personalData)
+    public function update(Request $request, PersonalData $personal)
     {
-        //
+        $personal->nombres = $request->nombres;
+        $personal->apellidos =  $request->apellidos;
+        $personal->tipo_documento = $request->tipo_documento;
+        $personal->num_documento =  $request->num_documneto;
+        $personal->edad = $request->edad;
+        $personal->fecha_nacimiento = $request->fecha_nacimiento;
+        $personal->genero = $request->genero;
+        $personal->celular = $request->celular;
+        $personal->foto = $request->foto;
+        session()->flash('message', 'Datos Personales actualizados satisfactoriamente!');
+        return redirect()->route('personal_data.create');
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PersonalData  $personalData
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PersonalData $personalData)
+    public function destroy($id)
     {
-        //
+
     }
 }

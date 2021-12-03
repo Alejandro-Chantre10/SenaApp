@@ -14,7 +14,8 @@ class TrainingProgramController extends Controller
      */
     public function index()
     {
-        //
+        $programs =  TrainingProgram::simplePaginate(2);
+        return view('training_program.index',compact('programs'));
     }
 
     /**
@@ -24,7 +25,7 @@ class TrainingProgramController extends Controller
      */
     public function create()
     {
-        //
+    return view('training_program.create');
     }
 
     /**
@@ -35,16 +36,25 @@ class TrainingProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $program =  new TrainingProgram;
+        $program->nombre = $request->nombre;
+        $program->ficha = $request->ficha;
+        $program->nivel_academico = $request->nivel_acedemico;
+        $program->fecha_inicio = $request->fecha_inicio;
+        $program->fecha_fin = $request->fecha_fin;
+        $program->etapa = $request->etapa;
+        session()->flash('message', 'Programa creado satisfactoriamente!');
+        return redirect()->route('training_program.create');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TrainingProgram  $trainingProgram
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(TrainingProgram $trainingProgram)
+    public function show($id)
     {
         //
     }
@@ -52,33 +62,40 @@ class TrainingProgramController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TrainingProgram  $trainingProgram
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(TrainingProgram $trainingProgram)
+    public function edit( TrainingProgram $program)
     {
-        //
+        return view('training_program.edit',compact('program'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\TrainingProgram  $trainingProgram
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TrainingProgram $trainingProgram)
+    public function update(Request $request, TrainingProgram $program)
     {
-        //
+        $program->nombre = $request->nombre;
+        $program->ficha = $request->ficha;
+        $program->nivel_academico = $request->nivel_acedemico;
+        $program->fecha_inicio = $request->fecha_inicio;
+        $program->fecha_fin = $request->fecha_fin;
+        $program->etapa = $request->etapa;
+        return redirect()->route('training_program.create');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TrainingProgram  $trainingProgram
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TrainingProgram $trainingProgram)
+    public function destroy($id)
     {
         //
     }

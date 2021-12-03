@@ -14,7 +14,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        //
+        $doctors =  Doctor::simplePaginate(4);
+        return view('doctor.create',compact('doctors'));
     }
 
     /**
@@ -24,7 +25,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        //
+        return view('doctor.create');
     }
 
     /**
@@ -35,16 +36,21 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $doctor = new Doctor;
+        $doctor->nombre = $request->nombre;
+        $doctor->identificacion = $request->identificacion;
+        $doctor->nivel_profesion = $request->nivel_profesion;
+        return redirect()->route('doctor.create');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Doctor  $doctor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Doctor $doctor)
+    public function show($id)
     {
         //
     }
@@ -52,33 +58,37 @@ class DoctorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Doctor  $doctor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Doctor $doctor)
     {
-        //
+        return view('doctor.edit',compact('doctor'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Doctor  $doctor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Doctor $doctor)
+    public function update(Request $request,Doctor $doctor)
     {
-        //
+        $doctor->nombre = $request->nombre;
+        $doctor->identificacion = $request->identificacion;
+        $doctor->nivel_profesion = $request->nivel_profesion;
+        return redirect()->route('doctor.create');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Doctor  $doctor
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Doctor $doctor)
+    public function destroy($id)
     {
         //
     }

@@ -14,7 +14,8 @@ class AttendantController extends Controller
      */
     public function index()
     {
-        //
+        $attendants = Attendant::simplePaginate(3);
+        return view('attentant.create',compact('attendants'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AttendantController extends Controller
      */
     public function create()
     {
-        //
+        return view('attendant.create');
     }
 
     /**
@@ -35,16 +36,23 @@ class AttendantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attendant = new Attendant;
+        $attendant->nombre = $request->nombre;
+        $attendant->identificacion = $request->identificacion;
+        $attendant->celular = $request->celular;
+        $attendant->correo = $request->correo;
+        return redirect()->route('attendant.create');
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Attendant  $attendant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Attendant $attendant)
+    public function show($id)
     {
         //
     }
@@ -52,33 +60,37 @@ class AttendantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Attendant  $attendant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Attendant $attendant)
+    public function edit($id)
     {
-        //
+        return view('attendant.edit',compact('attendant'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Attendant  $attendant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Attendant $attendant)
+    public function update(Request $request,Attendant $attendant)
     {
-        //
+        $attendant->nombre = $request->nombre;
+        $attendant->identificacion = $request->identificacion;
+        $attendant->celular = $request->celular;
+        $attendant->correo = $request->correo;
+        return redirect()->route('attendant.create');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Attendant  $attendant
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attendant $attendant)
+    public function destroy($id)
     {
         //
     }

@@ -14,7 +14,8 @@ class ControlController extends Controller
      */
     public function index()
     {
-        //
+        $controls = Control::simplePaginate(3);
+        return view('control.index',compact('controls'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ControlController extends Controller
      */
     public function create()
     {
-        //
+        return view('control.create');
     }
 
     /**
@@ -35,16 +36,20 @@ class ControlController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $control = new Control;
+        $control->descripcion = $request->descripcion;
+        $control->fecha = $request->fecha;
+        $control->hora = $request->hora;
+        return redirect()->route('control.create');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Control  $control
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Control $control)
+    public function show($id)
     {
         //
     }
@@ -52,33 +57,36 @@ class ControlController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Control  $control
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Control $control)
     {
-        //
+        return view('control.edit',compact('control'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Control  $control
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Control $control)
     {
-        //
+        $control->descripcion = $request->descripcion;
+        $control->fecha = $request->fecha;
+        $control->hora = $request->hora;
+        return redirect()->route('control.create');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Control  $control
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Control $control)
+    public function destroy($id)
     {
         //
     }

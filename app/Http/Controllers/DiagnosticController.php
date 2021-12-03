@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Models\Diagnostic;
 use Illuminate\Http\Request;
 
-class DiagnosticController extends Controller
+class DiagnosisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,8 @@ class DiagnosticController extends Controller
      */
     public function index()
     {
-        //
+        $diagnostics = Diagnostic::simplePaginate(4);
+        return view('diagnostic.index',compact('diagnostics'));
     }
 
     /**
@@ -24,7 +27,7 @@ class DiagnosticController extends Controller
      */
     public function create()
     {
-        //
+        return view('diagnostic.create');
     }
 
     /**
@@ -35,16 +38,22 @@ class DiagnosticController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $diagno = new Diagnostic;
+        $diagno->fecha = $request->fecha;
+        $diagno->hora = $diagno->hora;
+        $diagno->descripcion = $request->descripcion;
+        $diagno->resultado = $request->resultado;
+        return redirect()->route('diagnostic.create');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Diagnostic  $diagnostic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Diagnostic $diagnostic)
+    public function show($id)
     {
         //
     }
@@ -52,33 +61,37 @@ class DiagnosticController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Diagnostic  $diagnostic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Diagnostic $diagnostic)
+    public function edit( Diagnostic $diagno)
     {
-        //
+        return view('diagnostic.edit',compact('diagno'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Diagnostic  $diagnostic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Diagnostic $diagnostic)
+    public function update(Request $request,Diagnostic $diagno)
     {
-        //
+        $diagno->fecha = $request->fecha;
+        $diagno->hora = $diagno->hora;
+        $diagno->descripcion = $request->descripcion;
+        $diagno->resultado = $request->resultado;
+        return redirect()->route('diagnostic.create');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Diagnostic  $diagnostic
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Diagnostic $diagnostic)
+    public function destroy($id)
     {
         //
     }

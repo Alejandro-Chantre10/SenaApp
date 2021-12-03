@@ -14,7 +14,8 @@ class DiseaseController extends Controller
      */
     public function index()
     {
-        //
+        $diseases = Disease::simplePaginate(3);
+        return view('disease.create',compact('diseases'));
     }
 
     /**
@@ -24,7 +25,7 @@ class DiseaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('disease.create');
     }
 
     /**
@@ -35,16 +36,22 @@ class DiseaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $disease = new Disease;
+        $disease->nombre = $request->nombre;
+        $disease->descripcion = $request->descripcion;
+        $disease->tiempo_enfermedad = $request->tiempo_enfermedad;
+        return redirect()->route('disease.create');
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Disease  $disease
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Disease $disease)
+    public function show($id)
     {
         //
     }
@@ -52,33 +59,36 @@ class DiseaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Disease  $disease
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Disease $disease)
     {
-        //
+        return view('disease.edit',compact('disease'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Disease  $disease
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Disease $disease)
+    public function update(Request $request,Disease $disease)
     {
-        //
+        $disease->nombre = $request->nombre;
+        $disease->descripcion = $request->descripcion;
+        $disease->tiempo_enfermedad = $request->tiempo_enfermedad;
+        return redirect()->route('disease.create');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Disease  $disease
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Disease $disease)
+    public function destroy($id)
     {
         //
     }

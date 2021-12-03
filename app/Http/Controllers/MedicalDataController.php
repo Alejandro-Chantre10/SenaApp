@@ -5,81 +5,59 @@ namespace App\Http\Controllers;
 use App\Models\MedicalData;
 use Illuminate\Http\Request;
 
-class MedicalDataController extends Controller
+class MedicalDataController extends Controller{
+
+public function index()
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+    $medicals = MedicalData::simplePaginate(2);
+    return view('medical_data.index',compact('medicals'));
+}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+public function create()
+{
+return view('medical_data.create');
+}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\MedicalData  $medicalData
-     * @return \Illuminate\Http\Response
-     */
-    public function show(MedicalData $medicalData)
-    {
-        //
-    }
+public function store(Request $request)
+{
+    $medical = new MedicalData;
+    $medical->eps = $request->eps;
+    $medical->rh = $request->rh;
+    $medical->ultimo_control = $request->ultimo_control;
+    session()->flash('message', 'Datos Medicos creados satisfactoriamente!');
+    return redirect()->route('medical_data.create');
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\MedicalData  $medicalData
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(MedicalData $medicalData)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\MedicalData  $medicalData
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, MedicalData $medicalData)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\MedicalData  $medicalData
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(MedicalData $medicalData)
-    {
-        //
-    }
+}
+
+
+public function show($id)
+{
+
+}
+
+
+public function edit($id)
+{
+
+}
+
+public function update(Request $request, MedicalData $medical)
+{
+    $medical->eps = $request->eps;
+    $medical->rh = $request->rh;
+    $medical->ultimo_control = $request->ultimo_control;
+    session()->flash('message', 'Datos Medicos actualizados satisfactoriamente!');
+    return redirect()->route('medical_data.create');
+
+
+
+}
+
+public function destroy($id)
+{
+
+}
 }
