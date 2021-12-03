@@ -14,7 +14,13 @@ class CreateTrainingProgramsTable extends Migration
     public function up()
     {
         Schema::create('training_programs', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_training_program');
+            $table->string('nombre',20);
+            $table->integer('num_ficha');
+            $table->string('nivel_academico');
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
+            $table->string('etapa');
             $table->timestamps();
         });
     }

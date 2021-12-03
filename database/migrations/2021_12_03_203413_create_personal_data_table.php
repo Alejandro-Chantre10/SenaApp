@@ -14,8 +14,17 @@ class CreatePersonalDataTable extends Migration
     public function up()
     {
         Schema::create('personal_data', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_personal_data');
+            $table->string('nombres',30);
+            $table->string('apellidos',30);
+            $table->string('tipo_documento',30);
+            $table->integer('numero_documento');
+            $table->date('fecha_nacimiento');
+            $table->string('genero',30);
+            $table->integer('celular');
+            $table->binary('foto');
             $table->timestamps();
+
         });
     }
 
