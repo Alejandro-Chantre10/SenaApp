@@ -17,7 +17,13 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('layouts.layout');
 });
+
+Route::get('/', function () {
+    return view('index');
+});
+
+
 

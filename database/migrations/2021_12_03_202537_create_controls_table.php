@@ -15,7 +15,7 @@ class CreateControlsTable extends Migration
     {
         Schema::create('controls', function (Blueprint $table) {
             $table->id('id_control');
-            $table->text('descripción');
+            $table->text('descripcion');
             $table->date('fecha');
             $table->time('hora');
             $table->timestamps();

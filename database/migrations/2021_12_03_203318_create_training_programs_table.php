@@ -15,7 +15,7 @@ class CreateTrainingProgramsTable extends Migration
     {
         Schema::create('training_programs', function (Blueprint $table) {
             $table->id('id_training_program');
-            $table->string('nombre',20);
+            $table->string('nombre');
             $table->integer('num_ficha');
             $table->string('nivel_academico');
             $table->date('fecha_inicio');

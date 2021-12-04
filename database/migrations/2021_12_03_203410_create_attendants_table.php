@@ -18,7 +18,7 @@ class CreateAttendantsTable extends Migration
             $table->string('identificacion');
             $table->string('nombre',30);
             $table->string('celular');
-            $table->string('correo');
+            $table->string('correo')->unique();
             $table->timestamps();
         });
     }

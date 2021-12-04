@@ -18,10 +18,10 @@ class CreatePersonalDataTable extends Migration
             $table->string('nombres',30);
             $table->string('apellidos',30);
             $table->string('tipo_documento',30);
-            $table->integer('numero_documento');
+            $table->string('numero_documento');
             $table->date('fecha_nacimiento');
             $table->string('genero',30);
-            $table->integer('celular');
+            $table->string('celular');
             $table->binary('foto');
             $table->timestamps();
 
