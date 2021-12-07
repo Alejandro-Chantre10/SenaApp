@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PersonalDataController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/admin', function () {
     return view('layouts.layout');
 });
@@ -24,6 +22,9 @@ Route::get('/admin', function () {
 Route::get('/', function () {
     return view('index');
 });
+
+Route::resource('personal_data', PersonalDataController::class);
+Route::resource('users', UserController::class);
 
 
 

@@ -5,7 +5,7 @@
     font-weight: bold;
 }
 
-.logopa{
+.logopa {
     font-family: evogria;
 }
 
@@ -23,7 +23,7 @@
     right: 0;
 }
 
-.contenido{
+.contenido {
     display: block;
     position: absolute;
     z-index: 20;
@@ -33,60 +33,63 @@
     font-size: 1.75rem;
 }
 
-.logo2{
-  width: 4em;
-  height: 3em;
-  margin-right:  10px;
-
+.logo2 {
+    width: 4em;
+    height: 3em;
+    margin-right: 10px;
 }
 
 * {
     padding: 0;
-    margin:0;
+    margin: 0;
     list-style: none;
-  }
-  footer {
+}
+
+footer {
     background: rgba(9, 18, 32, 1);
-    display:flex;
+    display: flex;
     justify-content: center;
-    padding:20px ;
+    padding: 20px;
     max-height: 150px;
     min-height: 100px;
-  }
-  .sectionMain {
+}
+
+.sectionMain {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-  }
-  .logoQr {
+}
+
+.logoQr {
     width: 60px;
     height: 60px;
-  }
-  h6{
-    color: white;
-    font-size:15px;
-  }
+}
 
-  .vl {
+h6 {
+    color: white;
+    font-size: 15px;
+}
+
+.vl {
     border-left: 1px solid grey;
     max-width: 1px !important;
     height: 100px;
     padding: 0 !important;
-  }
+}
 
-  .decoration{
-      padding: 0 !important;
-      height: 800px;
-  }
+.decoration {
+    padding: 0 !important;
+    height: 800px;
+}
 
-  .decoration2{
+.decoration2 {
     padding: 0 !important;
     height: 800px;
     transform: rotate(180deg);
     float: left;
 }
 
-  .logo{
+.logo {
     max-width: 300px !important;
     min-width: 100px !important;
     position: absolute;
@@ -97,9 +100,17 @@
 }
 
 .avatar {
-  object-fit: cover;
-  border-radius:50%;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+    object-fit: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+a.button {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50px;
 }

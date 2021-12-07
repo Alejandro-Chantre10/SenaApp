@@ -16,17 +16,17 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('user.create');
+        return view('users.create');
     }
 
     public function store(Request $request)
     {
         $user = new User;
-        $user->nombre_usuario = $request->nombre_usuario;
+        $user->nombreUsuario = $request->nombreUsuario;
         $user->email = $request->email;
         $user->password = $request->password;
-        session()->flash('message', 'Usuario creado satisfactoriamente!');
-        return redirect()->route('users.create');
+        $user->save();
+        return redirect()->route('users.index');
     }
 
 
@@ -44,6 +44,7 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+
         $user->nombre_usuario = $request->nombre_usuario;
         $user->email = $request->email;
         $user->password = $request->password;

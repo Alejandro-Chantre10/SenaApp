@@ -25,16 +25,19 @@ class PersonalDataController extends Controller
         $personal = new PersonalData;
         $personal->nombres = $request->nombres;
         $personal->apellidos =  $request->apellidos;
+        $personal->email =  $request->email;
+        $personal->password =  $request->password;
         $personal->tipo_documento = $request->tipo_documento;
-        $personal->num_documento =  $request->num_documneto;
+        $personal->numero_documento=  $request->numero_documento;
         $personal->edad = $request->edad;
         $personal->fecha_nacimiento = $request->fecha_nacimiento;
         $personal->genero = $request->genero;
         $personal->celular = $request->celular;
-        $personal->foto = $request->foto;
-        session()->flash('message', 'Datos Personales creados satisfactoriamente!');
-        return redirect()->route('personal_data.create');
+        // $personal->foto = $request->foto;
+        // return $personal;
 
+        $personal->save();
+        return redirect()->route('personal_data.create');
 
     }
 

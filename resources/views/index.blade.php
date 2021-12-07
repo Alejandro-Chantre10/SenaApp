@@ -29,8 +29,10 @@
             <a class="nav-link active" href="#">Inicio</a>
             <a class="nav-link active" href="#">Mini-Tutoriales</a>
             <div>
-            <button type="button" class="btn btn-light">Registrarse</button>
-            <button type="button" class="btn btn-light">Iniciar Sesion</button>
+            <a href="{{route('personal_data.create')}}" class="button">Registrarse</a>
+
+            <a href="{{route('users.create')}}" class="button">Iniciar Sesión</a>
+
             </div>
           </div>
         </div>
