@@ -47,7 +47,7 @@ return [
 
     'logo' => '<b>SenApp</b>',
     'logo_img' => 'Icons/logo.svg',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img_class' => 'brand-image',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'SenApp',
@@ -259,18 +259,18 @@ return [
         ],
         ['header' => 'Control'],
         [
-            'text' => 'Funcionario',
-            'url'  => '',
+            'text' => 'Eliminar',
+            'url'  => '/remove',
             'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
         [
-            'text' => 'Medico',
-            'url'  => '',
+            'text' => 'Funcionario',
+            'url'  => '/official',
             'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
         [
             'text' => 'Diagnostico',
-            'url'  => '',
+            'url'  => '/diagnosis',
             'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
 

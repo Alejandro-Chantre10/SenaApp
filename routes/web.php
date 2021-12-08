@@ -31,3 +31,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+
+Route::get('/diagnosis', function () {
+    return view('admin_screens.diagnosis');
+});
+
+Route::get('/official', function () {
+    return view('admin_screens.official');
+});
+
+Route::get('/remove', function () {
+    return view('admin_screens.remove');
+});
