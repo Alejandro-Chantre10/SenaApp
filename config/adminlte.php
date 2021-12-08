@@ -246,16 +246,21 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',//Para utilizar los roles
         ],
+        [
+            'text' => 'Admin',
+            'url'  => 'admin',
+
+        ],
         ['header' => 'Aprendiz'],
         [
             'text' => 'Datos Medicos',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
+            'icon' => 'fas fa-fw fa-home',
         ],
         [
             'text' => 'Datos Personales',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
+            'icon' => 'fas fa-fw fa-home',
         ],
         ['header' => 'Control'],
         [
