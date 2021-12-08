@@ -14,8 +14,8 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
-    'title_prefix' => '',
+    'title' => '',
+    'title_prefix' => 'SenApp | ',
     'title_postfix' => '',
 
     /*
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>SenApp</b>',
+    'logo_img' => 'Icons/logo.svg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'SenApp',
 
     /*
     |--------------------------------------------------------------------------
@@ -85,10 +85,10 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
-    'layout_dark_mode' => null,
+    'layout_dark_mode' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -102,7 +102,7 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
+    'classes_auth_card' => 'card-outline card-dark',
     'classes_auth_header' => '',
     'classes_auth_body' => '',
     'classes_auth_footer' => '',
@@ -122,7 +122,7 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-primary',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
@@ -145,7 +145,7 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
+    'sidebar_mini' => true,
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
@@ -244,16 +244,37 @@ return [
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'can'  => 'manage-blog',//Para utilizar los roles
+        ],
+        ['header' => 'Aprendiz'],
+        [
+            'text' => 'Datos Medicos',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'Datos Personales',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
-        ['header' => 'account_settings'],
+        ['header' => 'Control'],
+        [
+            'text' => 'Funcionario',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
+        ],
+        [
+            'text' => 'Medico',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
+        ],
+        [
+            'text' => 'Diagnostico',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
+        ],
+
+        ['header' => 'Configuración de cuenta'],
         [
             'text' => 'profile',
             'url'  => 'admin/settings',

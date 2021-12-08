@@ -16,7 +16,10 @@
                     @if (Auth::user())
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
+                
                             <button type="submit" class="btn btn-secondary">LogOUT</button>
+                          {{-- <a href={{route('admin')}}>Panel </a> --}}
+
                     </form> @else
                     <div>
                         <a href="{{ route('register') }}" class="button">Registrarse</a>

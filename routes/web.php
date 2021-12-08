@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+// Route::get('/layout',function(){
+//     return view('layouts.layout');
+// })
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

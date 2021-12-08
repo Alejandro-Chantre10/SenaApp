@@ -1,10 +1,17 @@
 <x-guest-layout>
+    <link rel="stylesheet" href="css\login,css">
+
     <x-auth-card>
-        <x-slot name="logo">
+        {{-- <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
-        </x-slot>
+        </x-slot> --}}
+
+        {{-- logo --}}
+        <div>
+            <img src="image\fondo.jpg" class="d-block w-100" alt="sin conexion" height="550">
+        </div>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -17,7 +24,7 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label class="form-label" for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
@@ -43,11 +50,11 @@
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('¿Olvidó la contraseña?') }}
                     </a>
                 @endif
 
-                <x-button class="ml-3">
+                <x-button class="ml-3 btn btn-primary">
                     {{ __('Log in') }}
                 </x-button>
             </div>
