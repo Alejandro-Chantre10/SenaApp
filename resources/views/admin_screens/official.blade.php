@@ -25,7 +25,7 @@
 
 <body>
 
-    <h1 class="text-center logopa">Control Usuarios</h1>
+    <h1 class="text-center logopa">CONTROL DE USUARIOSS</h1>
     <form action="">
 
     </form>

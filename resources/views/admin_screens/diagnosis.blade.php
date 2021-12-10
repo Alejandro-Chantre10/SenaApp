@@ -25,7 +25,7 @@
 
 <body>
 
-    <h1 class="text-center logopa">diagnóstico Usuarios</h1>
+    <h1 class="text-center logopa">DIAGNOSTICOS DE USUARIOS</h1>
     <form action="">
 
     </form>

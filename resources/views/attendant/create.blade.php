@@ -9,7 +9,7 @@
 
 @section('content')
     <div class="container">
-        <div class="modal-content">
+
             <h1>Acudiente</h1>
 
             <form action="{{ route('attendant.store') }}" class="form-row" method="POST">
@@ -38,7 +38,6 @@
                 </div>
                 <button id="boton" class="btn btn-primary btn-block" type="submit">Insertar</button>
             </form>
-        </div>
     </div>
 
 

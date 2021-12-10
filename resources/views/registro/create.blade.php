@@ -37,7 +37,7 @@
 
                 <div class="mb-6">
                     <label for="email" class="form-label ">Email</label>
-                    <input type="text" name="email" class="form-control" />
+                    <input type="email" name="email" class="form-control" />
                 </div>
 
                 <div class="mb-6">

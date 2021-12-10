@@ -8,6 +8,9 @@
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+        <div>
+            <img src="image\fondo.jpg" class="d-block w-100" alt="sin conexion" height="550">
+        </div>
 
         <form method="POST" action="{{ route('register') }}">
             @csrf

@@ -104,7 +104,7 @@ return [
 
     'classes_auth_card' => 'card-outline card-dark',
     'classes_auth_header' => '',
-    'classes_auth_body' => '',
+    'classes_auth_body' => 'bg-info',
     'classes_auth_footer' => '',
     'classes_auth_icon' => '',
     'classes_auth_btn' => 'btn-flat btn-primary',
@@ -121,12 +121,12 @@ return [
     |
     */
 
-    'classes_body' => '',
+    'classes_body' => 'bg-primary',
     'classes_brand' => 'bg-primary',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
-    'classes_content_header' => '',
-    'classes_content' => '',
+    'classes_content_header' => 'bg-info',
+    'classes_content' => 'bg-primary',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-white navbar-light',

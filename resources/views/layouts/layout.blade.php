@@ -7,16 +7,17 @@
 @stop
 
 @section('content')
-   <div class="container">
-       <div class="modal-content">
-           
-        <h1>Bienvenido de vuelta Admin!!</h1>
-       </div>
-   
+   <div class="container main">
+    <h1>Bienvenido de vuelta Admin!!</h1>
    </div>
 @stop
 
 @section('css')
+<style type="text/css">
+    .main{
+        background-color: rgba(12, 67, 138, 1);
+    }
+</style>
 
 @stop
 
