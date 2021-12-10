@@ -14,7 +14,7 @@ class CreatePersonalDataTable extends Migration
     public function up()
     {
         Schema::create('personal_data', function (Blueprint $table) {
-            $table->id('id_personal_data');
+            $table->id();
             $table->string('nombres',30);
             $table->string('apellidos',30);
             $table->string('email')->unique();

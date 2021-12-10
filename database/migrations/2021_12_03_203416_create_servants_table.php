@@ -18,7 +18,7 @@ class CreateServantsTable extends Migration
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('id_personal_data');
-            $table->foreign('id_personal_data')->references('id_personal_data')->on('personal_data')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_personal_data')->references('id')->on('personal_data')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

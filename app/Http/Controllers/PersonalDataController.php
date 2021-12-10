@@ -10,68 +10,91 @@ class PersonalDataController extends Controller
 
     public function index()
     {
-        $personals = PersonalData::simplePaginate(2);
-        return view('personal_data.index',compact('personals'));
+        $personals = PersonalData::all();
+        return view('registro.index',compact('personals'));
     }
 
     public function create()
     {
-        return view('personal_data.create');
+        return view('registro.create');
     }
 
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'nombres'=>'required',
+            'apellidos'=>'required',
+            'genero'=>'required',
+            'email'=>'required',
+            'password'=>'required',
+            'tipo_documento'=>'required',
+            'numero_documento'=>'required',
+            'edad'=>'required',
+            'fecha_nacimiento'=>'required',
+            'celular'=>'required',
+        ]);
         $personal = new PersonalData;
         $personal->nombres = $request->nombres;
         $personal->apellidos =  $request->apellidos;
-        $personal->email =  $request->email;
-        $personal->password =  $request->password;
+        $personal->genero = $request->genero;
+        $personal->email = $request->email;
+        $personal->password = $request->password;
         $personal->tipo_documento = $request->tipo_documento;
-        $personal->numero_documento=  $request->numero_documento;
+        $personal->numero_documento =  $request->numero_documento;
         $personal->edad = $request->edad;
         $personal->fecha_nacimiento = $request->fecha_nacimiento;
-        $personal->genero = $request->genero;
         $personal->celular = $request->celular;
-        // $personal->foto = $request->foto;
+
         // return $personal;
 
         $personal->save();
-        return redirect()->route('personal_data.create');
+        return redirect()->route('registro.create');
 
     }
 
 
-    public function show($id)
+    public function show()
     {
 
     }
 
 
-    public function edit(PersonalData $personal)
+    public function edit($id)
     {
-        return view('personal_data.edit',compact('personal'));
+        $personal = PersonalData::findOrFail($id);
+        return view('registro.edit',compact($personal));
     }
 
-    public function update(Request $request, PersonalData $personal)
+    public function update(Request $request, $id)
     {
-        $personal->nombres = $request->nombres;
-        $personal->apellidos =  $request->apellidos;
-        $personal->tipo_documento = $request->tipo_documento;
-        $personal->num_documento =  $request->num_documneto;
-        $personal->edad = $request->edad;
-        $personal->fecha_nacimiento = $request->fecha_nacimiento;
-        $personal->genero = $request->genero;
-        $personal->celular = $request->celular;
-        $personal->foto = $request->foto;
-        session()->flash('message', 'Datos Personales actualizados satisfactoriamente!');
-        return redirect()->route('personal_data.create');
+        $personal= request();
+        PersonalData::where('id','=',$id)->update($personal);
+        $personal=PersonalData::findOrFail($id);
+        return view('registro.edit',compact('personal'));
+        // $personal->nombres = $request->nombres;
+        // $personal->apellidos =  $request->apellidos;
+        // $personal->genero = $request->genero;
+        // $personal->email = $request->email;
+        // $personal->password = $request->password;
+        // $personal->tipo_documento = $request->tipo_documento;
+        // $personal->num_documento =  $request->num_documneto;
+        // $personal->edad = $request->edad;
+        // $personal->fecha_nacimiento = $request->fecha_nacimiento;
+
+        // $personal->celular = $request->celular;
+
+        // $personal->save();
+
+        // return redirect()->route('registro.index');
 
 
     }
 
-    public function destroy($id)
+    public function destroy(PersonalData $personal)
     {
-
+        $personal->delte();
+        return redirect()->route('registro.index');
     }
 }

@@ -253,29 +253,51 @@ return [
         ],
         ['header' => 'Aprendiz'],
         [
-            'text' => 'Datos Medicos',
-            'url'  => '',
+            'text' => 'Registrar',
+            'route'  => 'registro.create',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        // [
+        //     'text' => 'Editar',
+        //     'route'  => 'registro.edit',
+        //     'icon' => 'fas fa-fw fa-home',
+        // ],
+        [
+            'text' => 'Listar',
+            'route'  => 'registro.index',
+            'icon' => 'fas fa-fw fa-home',
+        ],
+        ['header' => 'Datos Medicos'],
+        [
+            'text' => 'Principal',
+            'route' => 'medical_data.create',
             'icon' => 'fas fa-fw fa-home',
         ],
         [
-            'text' => 'Datos Personales',
-            'url'  => '',
+            'text' => 'Enfermedades',
+            'route' => 'disease.create',
+            'icon' => 'fas fa-fw fa-home'
+
+        ],
+        [
+            'text' => 'Acudiente',
+            'route' => 'attendant.create',
             'icon' => 'fas fa-fw fa-home',
         ],
         ['header' => 'Control'],
         [
-            'text' => 'Funcionario',
-            'url'  => '',
+            'text' => 'Registrar',
+            'route'  => 'control.create',
             'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
         [
-            'text' => 'Medico',
-            'url'  => '',
+            'text' => 'Funcionario',
+            'url'  => '/official',
             'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
         [
             'text' => 'Diagnostico',
-            'url'  => '',
+            'url'  => '/diagnosis',
             'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],
 

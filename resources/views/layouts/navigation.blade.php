@@ -17,7 +17,9 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <button type="submit" class="btn btn-secondary">LogOUT</button>
+                           
+                              <a href="{{ route('login') }}" class="button">Iniciar Sesión</a>
+                              <button type="submit" class="btn btn-secondary">LogOUT</button>
                           {{-- <a href={{route('admin')}}>Panel </a> --}}
 
                     </form> @else

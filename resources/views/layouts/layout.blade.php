@@ -3,11 +3,17 @@
 @section('title','Admin')
 
 @section('content_header')
-<h1>Dashboard</h1>
+
 @stop
 
 @section('content')
-    <p>Welcome</p>
+   <div class="container">
+       <div class="modal-content">
+           
+        <h1>Bienvenido de vuelta Admin!!</h1>
+       </div>
+   
+   </div>
 @stop
 
 @section('css')
