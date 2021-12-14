@@ -15,7 +15,7 @@
 @section('css')
 <style type="text/css">
     .main{
-        background-color: rgba(12, 67, 138, 1);
+
     }
 </style>
 
