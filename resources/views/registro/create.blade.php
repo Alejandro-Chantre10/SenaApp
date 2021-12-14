@@ -5,7 +5,7 @@
 
     <body>
         <div class="fondo">
-            <h1>Datos Personales</h1>
+            <h1> INGRESAR DATOS PERSONALES</h1>
 
             <div class="form">
                 <br>

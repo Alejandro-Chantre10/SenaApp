@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-   <div class="container main">
+   <div class="main">
     <h1>Bienvenido de vuelta Admin!!</h1>
    </div>
 @stop

@@ -8,9 +8,9 @@
 @stop
 
 @section('content')
-    <div class="container">
+    <div class="fondo">
 
-            <h1>Pedir Control</h1>
+            <h1>PEDIR CONTROL</h1>
 
             <form action="{{ route('control.store') }}" class="form-row" method="POST">
                 @csrf
@@ -44,6 +44,11 @@
     <link rel="stylesheet" href="/css/admin_custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style type="text/css">
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
         .form-control,
         .form-select-sm {
             background-color: rgb(58, 10, 10);
@@ -58,9 +63,22 @@
             margin-left: 34%;
         }
 
-        .modal-content{
-            background-color: rgb(58, 10, 10);
+        .fondo {
+            background-image: url("/image/fondo.jpg");
+            width: 100%;
+            height: 100%;
+            padding: 200px;
+            background-position: relative;
+
+
         }
+
+        .form{
+            background-color: rgba(9, 18, 32, 1);
+            border-radius: 5%;
+            margin-left: 200px;
+            margin-right: 200px;        }
+
 
         #boton {
             height: 40px;
@@ -69,7 +87,7 @@
             text-align: center;
             margin-top: 20px;
             margin-bottom: 80px;
-            background: white;
+            background: rgb(255, 255, 255);
             color: black;
             margin-left: 40%;
         }
@@ -82,6 +100,5 @@
 
     </style>
 @stop
-
 @section('js')
 @stop
