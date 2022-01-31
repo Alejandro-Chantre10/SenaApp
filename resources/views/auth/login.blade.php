@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -13,8 +13,8 @@
     <title>Document</title>
 </head>
 <div class="fondo">
-    <div class="container login">
-        <h1>LOGIN</h1><br>
+    <div class="container login text-center rounded border border-primary">
+        <h1 style="color: white;">Iniciar sesión</h1><br>
 
         {{-- <x-guest-layout>
     <link rel="stylesheet" href="css\login,css">
@@ -43,7 +43,7 @@
             @csrf
 
             <!-- Email Address -->
-            <div>
+            <div style="color: white;">
                 <x-label class="form-label" for="email" :value="__('Email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
@@ -51,7 +51,7 @@
             </div>
 
             <!-- Password -->
-            <div class="mt-4">
+            <div class="mt-4" style="color: white;">
                 <x-label for="password" :value="__('Password')" />
 
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
@@ -59,25 +59,25 @@
             </div>
 
             <!-- Remember Me -->
-            <div class="block mt-4">
+            <div class="block mt-4" style="color: white;">
                 <label for="remember_me" class="inline-flex items-center">
                     <input id="remember_me" type="checkbox"
                         class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                         name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Recuérdame') }}</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                    <a style="margin: 10px;" class="underline text-sm text-gray-600 hover:text-gray-900"
                         href="{{ route('password.request') }}">
                         {{ __('¿Olvidó la contraseña?') }}
                     </a>
                 @endif
 
-                <x-button class="ml-3 btn btn-primary">
-                    {{ __('Log in') }}
+                <x-button class="ml-3 btn btn-primary" style="margin: 10px;">
+                    {{ __('Iniciar sesión') }}
                 </x-button>
             </div>
         </form>
@@ -117,7 +117,7 @@
             background-image: url("/image/fondo.jpg");
             width: 100%;
             height: 100%;
-            padding: 200px;
+            padding: 100px;
             background-repeat: no-repeat;
             background-size: auto;
 

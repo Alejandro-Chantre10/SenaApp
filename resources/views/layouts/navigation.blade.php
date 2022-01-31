@@ -11,15 +11,15 @@
                 <div class="navbar-nav navbar-collapse justify-content-md-between ms-lg-4">
                     <a class="nav-link active" aria-current="page" href="#SobreNosotros">Sobre nosotros</a>
                     <a class="nav-link active" href="#">Inicio</a>
-                    <a class="nav-link active" href="#">Mini-Tutoriales</a>
+                    <a class="nav-link active" href="admin">Datos</a>
 
                     @if (Auth::user())
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
                            
-                              <a href="{{ route('login') }}" class="button">Iniciar Sesión</a>
-                              <button type="submit" class="btn btn-secondary">LogOUT</button>
+                            
+                              <button type="submit" class="btn btn-secondary">Cerrar Sesión</button>
                           {{-- <a href={{route('admin')}}>Panel </a> --}}
 
                     </form> @else

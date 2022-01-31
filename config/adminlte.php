@@ -47,7 +47,7 @@ return [
 
     'logo' => '<b>SenApp</b>',
     'logo_img' => 'Icons/logo.svg',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo_img_class' => 'brand-image elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'SenApp',
@@ -146,7 +146,7 @@ return [
     */
 
     'sidebar_mini' => true,
-    'sidebar_collapse' => false,
+    'sidebar_collapse' => true,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
     'sidebar_collapse_remember_no_transition' => true,
@@ -188,7 +188,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -249,7 +249,7 @@ return [
         ],
         ['header' => 'Aprendiz'],
         [
-            'text' => 'Registrar',
+            'text' => 'Datos Personales',
             'route'  => 'registro.create',
             'icon' => 'fas fa-fw fa-home',
         ],
@@ -265,7 +265,7 @@ return [
         ],
         ['header' => 'Datos Medicos'],
         [
-            'text' => 'Principal',
+            'text' => 'EPS',
             'route' => 'medical_data.create',
             'icon' => 'fas fa-fw fa-home',
         ],
@@ -282,7 +282,7 @@ return [
         ],
         ['header' => 'Control'],
         [
-            'text' => 'Registrar',
+            'text' => 'Registrar Control',
             'route'  => 'control.create',
             'icon' => 'fas fa-fw fa-home',//Para utilizar los roles
         ],

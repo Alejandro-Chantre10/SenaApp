@@ -134,8 +134,15 @@ height: 90vh;
     background-image: url("/image/fondo.jpg");
     width: 100%;
     height: 100%;
-    padding: 450px;
-    background-repeat: no-repeat;
+    padding: 350px;
+    background-size: auto;
+}
+
+.fondoControl {
+    background-image: url("/image/fondo.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: auto;
 }
 
 .login{

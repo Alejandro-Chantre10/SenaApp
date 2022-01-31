@@ -25,6 +25,10 @@
 
 <body>
 
+
+
+    <div class="fondoControl">
+
     <h1 class="text-center logopa">DIAGNOSTICOS DE USUARIOS</h1>
     <form action="">
 
@@ -35,8 +39,7 @@
         <input type="text" class="form-control" placeholder="Search">
     </form>
 
-    <div class="mb-2 bg-secondary text-white row"
-        style="margin: 0 20px; margin-top: 40px; margin-bottom: 20px; border-radius: 24px; padding: 30px;">
+    <div class="mb-2 bg-secondary text-white row" style="margin: 0 20px; margin-top: 40px; margin-bottom: 20px; border-radius: 24px; padding: 30px;">
         <div class="col">
             <img src="image\avatar.png" alt="logo senapp" class="avatar" style="width: 70px;height: 70px;">
         </div>
@@ -50,15 +53,12 @@
             Fecha de registro:: <br> 03/02/2021
         </div>
         <button type="button" class="btn btn-outline-light logopa">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
             </svg>
         </button>
     </div>
-    <div class="mb-2 bg-secondary text-white row"
-        style="margin: 0 20px; margin-top: 40px; margin-bottom: 20px; border-radius: 24px; padding: 30px;">
+    <div class="mb-2 bg-secondary text-white row" style="margin: 0 20px; margin-top: 40px; margin-bottom: 20px; border-radius: 24px; padding: 30px;">
         <div class="col">
             <img src="image\avatar.png" alt="logo senapp" class="avatar" style="width: 70px;height: 70px;">
         </div>
@@ -72,15 +72,12 @@
             Fecha de registro:: <br> 03/02/2021
         </div>
         <button type="button" class="btn btn-outline-light logopa">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
             </svg>
         </button>
     </div>
-    <div class="mb-2 bg-secondary text-white row"
-        style="margin: 0 20px; margin-top: 40px; margin-bottom: 20px; border-radius: 24px; padding: 30px;">
+    <div class="mb-2 bg-secondary text-white row" style="margin: 0 20px; margin-top: 40px; margin-bottom: 20px; border-radius: 24px; padding: 30px;">
         <div class="col">
             <img src="image\avatar.png" alt="logo senapp" class="avatar" style="width: 70px;height: 70px;">
         </div>
@@ -94,10 +91,8 @@
             Fecha de registro:: <br> 03/02/2021
         </div>
         <button type="button" class="btn btn-outline-light logopa">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
             </svg>
         </button>
     </div>
@@ -120,6 +115,7 @@
         </ul>
     </nav>
 
+    </div>
 </body>
 
 </html>
